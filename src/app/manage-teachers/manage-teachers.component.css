@@ -1,0 +1,181 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin-right: -8px; /* Ajusta a margem direita */
+  margin-left: -10px;
+  margin-top: -1px;
+  background-color: #f4f4f4;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que a altura mínima seja 100% da tela */
+  padding-bottom: 60px; /* Espaçamento equivalente à altura do rodapé */
+}
+
+/* Cabeçalho */
+.dashboard-header {
+  background-color: #007973; /* Cor verde moderna */
+  color: white; /* Cor do texto */
+  text-align: center; /* Centraliza o texto */
+  padding: 20px; /* Espaçamento interno */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  margin: 20px auto 30px auto; /* Espaço no topo e na base */
+  max-width: 600px; /* Largura máxima */
+  border-radius: 12px; /* Bordas arredondadas */
+}
+
+
+.dashboard-header h1 {
+  font-size: 2rem; /* Tamanho da fonte */
+  font-family: 'Arial', sans-serif; /* Fonte */
+  margin: 0; /* Remove margens extras */
+}
+
+
+
+/* Seção de Ações */
+.actions {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.actions h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Botões */
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px; /* Cantos arredondados */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.add-btn {
+  background-color: #38a169; /* Verde moderno */
+  color: white;
+}
+
+.add-btn:hover {
+  background-color: #2f855a;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px); /* Pequeno efeito de elevação */
+}
+
+.remove-btn {
+  background-color: #e53e3e; /* Vermelho moderno */
+  color: white;
+}
+
+.remove-btn:hover {
+  background-color: #c53030;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.danger-btn {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.danger-btn:hover {
+  background-color: #cc0000;
+  transform: scale(1.05);
+}
+
+/* Cards de Professores */
+.teacher-list {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem para uma nova linha */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  gap: 20px; /* Espaçamento entre os cards */
+  margin-top: 20px; /* Espaçamento entre o título e os cards */
+}
+
+.teacher-list h2 {
+  width: 100%; /* Garante que o título ocupe toda a largura */
+  text-align: center; /* Centraliza o texto */
+  font-size: 1.8rem;
+  margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+.teacher-card {
+  background-color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 20px;
+  width: calc(45% - 20px);
+  max-width: 350px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 10px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px; /* Espaço entre o card e o rodapé */
+}
+
+
+.teacher-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Destaque no hover */
+}
+
+.teacher-card h3 {
+  font-size: 1.5rem;
+  color: #2d3748; /* Tom de cinza moderno */
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.teacher-card p {
+  font-size: 1.1rem;
+  color: #4a5568; /* Tom de cinza suave */
+}
+
+.danger-btn {
+  background-color: #e53e3e; /* Vermelho moderno */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.danger-btn:hover {
+  background-color: #c53030;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .teacher-list {
+    flex-direction: column; /* Alinha os cards verticalmente */
+    align-items: center; /* Centraliza os cards no eixo horizontal */
+  }
+
+  .teacher-card {
+    width: 90%; /* Ocupa 90% da largura para manter margens laterais */
+    margin: 10px 0; /* Espaçamento entre os cards */
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+

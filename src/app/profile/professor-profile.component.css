@@ -1,0 +1,176 @@
+.professor-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.professor-page h1 {
+  font-size: 28px;
+  color: #004d40;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Profile Section */
+.profile-section {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.profile-section img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 15px;
+  border: 2px solid #00796b;
+}
+
+.profile-section .profile-info h2 {
+  font-size: 22px;
+  color: #00796b;
+  margin: 0;
+}
+
+.profile-section .profile-info p {
+  margin: 5px 0;
+  color: #666;
+}
+
+/* Section Wrapper */
+.professor-page section {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.professor-page section h2 {
+  font-size: 22px;
+  color: #00796b;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #00796b;
+  padding-bottom: 5px;
+}
+
+/* Calendar */
+.calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.calendar-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  width: 100%;
+}
+
+.day-name, .day-cell {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.day-name {
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
+
+.day-cell {
+  position: relative;
+  min-height: 100px;
+}
+
+.day-cell.today {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.day-cell.has-classes {
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.date {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Hourly Form */
+.hourly-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hour-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hour-label {
+  width: 50px;
+  text-align: center;
+}
+
+input, button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #00796b;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #004d40;
+}
+/* Calendar Section */
+.calendar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* FullCalendar */
+full-calendar {
+  width: 100%;
+  max-width: 900px; /* Set a maximum width for the calendar */
+  margin: 0 auto; /* Center horizontally */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for better visibility */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 15px;
+}

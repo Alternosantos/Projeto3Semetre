@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- Define o conjunto de caracteres utilizado no arquivo -->
+    <meta charset="UTF-8">
+
+    <!-- Define a responsividade, para que o layout se ajuste em diferentes tamanhos de tela -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da página que será exibido na aba do navegador -->
+    <title>Gestão Docente - IPCA</title>
+
+    <!-- Link para a folha de estilo do Bootstrap, uma framework para construção de layouts responsivos -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Link para os ícones do Bootstrap (ícones usados no design) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Link para a biblioteca AOS (Animate On Scroll), para animações suaves ao rolar a página -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <!-- Estilos customizados da página -->
+    <style>
+        /* Ajustando a altura da barra de navegação */
+        .navbar {
+            padding: 0; /* Ajuste a altura da barra de navegação */
+            height: 100px;
+            display: flex;
+            align-items: center;
+            background-color: #007A48;
+        }
+
+        /* Ajustando o logo */
+        .navbar-brand img {
+            height: 60px; /* Ajuste a altura do logo, pode aumentar para 80px, 100px, dependendo do seu gosto */
+            width:auto;
+            object-fit: contain; /* Garante que o logo tenha um bom dimensionamento sem cortar */
+        }
+
+        /* Estilos da seção Hero (seção principal de destaque) */
+        .hero {
+            position: relative; /* Permite posicionar elementos sobrepostos nesta seção */
+            background: url('imagens/ipca_image.jpg') no-repeat center center; /* Imagem de fundo */
+            background-size: cover; /* Ajusta a imagem para cobrir toda a área da seção */
+            color: white; /* Define a cor do texto como branca */
+            padding: 100px 0; /* Adiciona espaçamento vertical */
+            min-height: 100vh; /* Garante que a seção tenha no mínimo a altura da tela */
+            text-align: center; /* Alinha o texto no centro da seção */
+        }
+
+        /* Camada de sobreposição escura sobre a imagem de fundo para melhorar o contraste do texto */
+        .hero-overlay {
+            position: absolute; /* Posiciona a camada de sobreposição sobre a imagem de fundo */
+            top: 0;
+            left: 0;
+            width: 100%; /* Ocupa toda a largura da seção */
+            height: 100%; /* Ocupa toda a altura da seção */
+            background-color: rgba(0, 0, 0, 0.5); /* Cor preta com opacidade de 50% */
+        }
+
+        /* Estilos para o conteúdo dentro da seção Hero */
+        .hero-content {
+            position: relative;
+            z-index: 1; /* Garante que o conteúdo fique acima da camada de sobreposição */
+        }
+
+        /* Estilos para o título principal da seção Hero */
+        .hero h1 {
+            font-size: 3rem; /* Define o tamanho da fonte do título */
+            font-weight: bold; /* Torna o título em negrito */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Aplica uma sombra suave ao texto para destacar */
+            margin-bottom: 20px; /* Espaço abaixo do título */
+        }
+
+        /* Estilos para o parágrafo que segue o título */
+        .hero p {
+            font-size: 1.25rem; /* Define o tamanho da fonte do parágrafo */
+            margin-top: 1rem; /* Espaço acima do parágrafo */
+            margin-bottom: 30px; /* Espaço abaixo do parágrafo */
+        }
+
+        /* Estilos para o botão na seção Hero */
+        .btn-light {
+            background-color: #fff; /* Cor de fundo do botão */
+            color: #333; /* Cor do texto do botão */
+            padding: 12px 30px; /* Espaçamento interno do botão */
+            font-size: 1.1rem; /* Tamanho da fonte */
+            border-radius: 30px; /* Bordas arredondadas do botão */
+            text-transform: uppercase; /* Torna o texto em maiúsculas */
+            font-weight: bold; /* Torna o texto em negrito */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave nas cores quando o usuário interagir */
+        }
+
+        /* Efeito de hover (quando o usuário passa o mouse sobre o botão) */
+        .btn-light:hover {
+            background-color: #333; /* Cor de fundo do botão ao passar o mouse */
+            color: #fff; /* Cor do texto do botão ao passar o mouse */
+        }
+
+        /* Efeito de rolagem da Navbar (navbar que muda de cor ao rolar a página) */
+        .navbar.scrolled {
+            background-color: rgba(0, 0, 0, 0.8); /* Cor escura quando rolar */
+            transition: background-color 0.3s ease; /* Transição suave na cor da navbar */
+        }
+
+        /* Responsividade: ajusta os estilos em telas menores (ex: dispositivos móveis) */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem; /* Diminui o tamanho do título em telas pequenas */
+            }
+            .hero p {
+                font-size: 1.1rem; /* Diminui o tamanho do texto do parágrafo */
+            }
+        }
+
+        /* Seção de Contato */
+        #contact {
+            padding: 5rem 0;
+            background-color: #f8f9fa;
+        }
+
+        /* Formulário de contato centralizado */
+        .contact-form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .contact-form {
+            background: #fff;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        /* Estilo dos campos de formulário */
+        .form-control {
+            border-radius: 5px;
+            box-shadow: none;
+        }
+
+        /* Botão de envio */
+        .btn-primary {
+            width: 100%;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #007A48; /* Substitui a cor de fundo atual por #007A48 */
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+            <img src="imagens/ipca_logo.png" alt="Logo do IPCA">
+        </a>
+
+        <!-- Botão para expandir a navbar em dispositivos móveis -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Itens da navbar -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto"> <!-- "ms-auto" para alinhar os itens à direita -->
+                <li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
+                <li class="nav-item"><a class="nav-link" href="#features">Funcionalidades</a></li>
+                <li class="nav-item"><a class="nav-link" href="#team">Equipa</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section (seção principal com imagem de fundo e texto de boas-vindas) -->
+<header class="hero text-white">
+    <div class="hero-overlay"></div> <!-- Camada de sobreposição escura para melhorar a legibilidade -->
+    <div class="hero-content" data-aos="fade-up"> <!-- AOS define a animação para quando a página rolar -->
+        <div class="container">
+            <!-- Título da seção -->
+            <h1>Bem-vindo à Gestão de Docentes</h1>
+            <!-- Descrição da seção -->
+            <p class="lead">Uma plataforma inovadora para organizar e otimizar a distribuição de serviços docentes no IPCA.</p>
+            <!-- Botão para "Saiba Mais" -->
+            <a href="#about" class="btn btn-light btn-lg">Saiba Mais</a>
+        </div>
+    </div>
+</header>
+
+<!-- About Section (seção sobre o projeto) -->
+<section id="about" class="py-5" >
+    <div class="container text-center" data-aos="fade-up"> <!-- AOS adiciona animação de fade-up -->
+        <h2 class="mb-4">Sobre o Projeto</h2> <!-- Título da seção -->
+
+        <p>A plataforma de gestão docente do IPCA foi criada com o objetivo de otimizar o gerenciamento de horários e a distribuição de cargas horárias dos docentes. Seu foco é trazer mais eficiência e organização aos processos administrativos, tornando-os mais ágeis e acessíveis para todos os envolvidos.</p>
+
+        <p>Ao centralizar as informações e automatizar a distribuição de horários, a plataforma facilita o trabalho dos gestores, reduzindo erros e melhorando a alocação de professores conforme suas especializações e disponibilidade. Isso permite uma administração mais clara e justa, beneficiando tanto docentes quanto administradores.</p>
+
+        <p>Além disso, a plataforma proporciona uma interface simples e intuitiva, permitindo que os docentes acompanhem seus horários e atualizem suas disponibilidades facilmente, enquanto os gestores podem gerar relatórios e ajustar a carga horária de forma eficiente.</p>
+
+        <p>Em resumo, a plataforma visa simplificar o processo administrativo, economizando tempo e recursos, ao mesmo tempo em que melhora a organização e a transparência na gestão docente, promovendo uma melhor experiência para todos os usuários.</p>
+    </div>
+</section>
+
+<!-- Funcionalidades Section -->
+<section id="features" class="py-5 bg-light">
+    <div class="container" data-aos="fade-up">
+        <h2 class="text-center mb-5">Funcionalidades</h2>
+        <div class="row g-4"> <!-- Início da linha -->
+            <!-- Funcionalidade 1 -->
+            <div class="col-md-4 text-center">
+                <i class="bi bi-layout-text-sidebar-reverse display-4 text-primary mb-3"></i>
+                <h5>Gestão de Horários</h5>
+                <p>Criação, edição e visualização de horários docentes de forma eficiente e organizada.</p>
+            </div>
+            <!-- Funcionalidade 2 -->
+            <div class="col-md-4 text-center">
+                <i class="bi bi-clipboard-check display-4 text-success mb-3"></i>
+                <h5>Distribuição de Cargas</h5>
+                <p>Controle automatizado e otimizado da carga horária atribuída a cada docente.</p>
+            </div>
+            <!-- Funcionalidade 3 -->
+            <div class="col-md-4 text-center">
+                <i class="bi bi-bar-chart-line display-4 text-warning mb-3"></i>
+                <h5>Relatórios Personalizados</h5>
+                <p>Geração de relatórios detalhados sobre atribuições, desempenho e outras métricas importantes.</p>
+            </div>
+        </div> <!-- Fim da linha -->
+    </div>
+</section>
+
+<!-- Team Section -->
+<section id="team" class="py-5">
+    <div class="container" data-aos="fade-up">
+        <h2 class="text-center mb-5">A Nossa Equipa</h2>
+        <div class="row text-center justify-content-center align-items-center">
+            <!-- Membro 1 -->
+            <div class="col-md-3 col-sm-6 mb-4">
+                <img src="imagens/img_2.png" class="rounded-circle img-fluid mb-3" alt="Foto do Alberto Santos" style="width: 100px; height: 100px; object-fit: cover;">
+                <h5>Alberto Santos</h5>
+                <p class="text-muted">Desenvolvedor</p>
+            </div>
+            <!-- Membro 2 -->
+            <div class="col-md-3 col-sm-6 mb-4">
+                <img src="imagens/img_3.png" class="rounded-circle img-fluid mb-3" alt="Foto do Gustavo Rangel" style="width: 100px; height: 100px; object-fit: cover;">
+                <h5>Gustavo Rangel</h5>
+                <p class="text-muted">Designer</p>
+            </div>
+            <!-- Membro 3 -->
+            <div class="col-md-3 col-sm-6 mb-4">
+                <img src="imagens/img_4.png" class="rounded-circle img-fluid mb-3" alt="Foto do Luis Oliveira" style="width: 100px; height: 100px; object-fit: cover;">
+                <h5>Luis Oliveira</h5>
+                <p class="text-muted">Analista</p>
+            </div>
+            <!-- Membro 4 -->
+            <div class="col-md-3 col-sm-6 mb-4">
+                <img src="imagens/img_5.png" class="rounded-circle img-fluid mb-3" alt="Foto do Ricardo Ferreira" style="width: 100px; height: 100px; object-fit: cover;">
+                <h5>Gabriel Afonso</h5>
+                <p class="text-muted">Tester</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Contacto</h2>
+        <div class="contact-form-container">
+            <form class="contact-form">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="name" placeholder="Seu nome" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Seu email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensagem</label>
+                    <textarea class="form-control" id="message" rows="5" placeholder="Sua Mensagem" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Rodapé(footer) -->
+<footer class="py-4 text-white text-center" style="background-color: #007A48;">
+    <p>&copy; 2025 Gestão Docente. Todos os direitos reservados.</p>
+</footer>
+
+<!-- Link para os scripts do Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Link para a biblioteca AOS (Animate On Scroll) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    // Inicializa as animações AOS quando a página é carregada
+    AOS.init();
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

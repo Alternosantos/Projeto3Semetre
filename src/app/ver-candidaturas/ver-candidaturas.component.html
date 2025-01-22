@@ -1,0 +1,19 @@
+<div class="container mt-4">
+  <header class="dashboard-header">
+    <h1>Gerir Candidaturas</h1>
+    <p>Bem-vindo ao painel de gestão de candidaturas.</p>
+  </header>
+
+  <section class="candidaturas-list">
+    <div *ngIf="candidaturas.length === 0">
+      <p>Não foram encontrados currículos.</p>
+    </div>
+    <div *ngFor="let candidatura of candidaturas" class="candidatura-card">
+      <h3>{{ candidatura.PrimeiroNome }} {{ candidatura.SegundoNome }}</h3>
+      <p>Email: {{ candidatura.Email }}</p>
+      <p>Grau de Educação: {{ candidatura.Educacao }}</p>
+      <p>Matéria Lecionada: {{ candidatura.Subject }}</p>
+      <button class="btn btn-primary" (click)="chooseCandidatura(candidatura)">Escolher</button>
+    </div>
+  </section>
+</div>

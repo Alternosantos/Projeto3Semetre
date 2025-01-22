@@ -1,0 +1,19 @@
+<div class="professor-page">
+  <h1>Espaço do Professor</h1>
+
+  <!-- Seção de Perfil do Professor -->
+  <section class="profile-section">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" alt="Foto do Professor">
+    <div class="profile-info">
+      <h2>{{ teacher?.PrimeiroNome || 'Nome do Professor' }} {{ teacher?.SegundoNome || '' }}</h2>
+      <p>{{ teacher?.Educacao || 'Descrição ou cargo do professor' }}</p>
+      <p>{{ teacher?.Email || 'Informações adicionais, como formação, experiência, etc.' }}</p>
+    </div>
+  </section>
+
+  <!-- Calendário Mensal -->
+  <section class="calendar-section">
+    <h2>Calendário Mensal</h2>
+    <full-calendar [options]="calendarOptions"></full-calendar>
+  </section>
+</div>

@@ -1,0 +1,26 @@
+<div class="page-container">
+<header class="header">
+  <nav class="navbar">
+    <ul class="nav-links">
+      <div class="logo-container">
+        <img src="https://ctesp.ipca.pt/wp-content/uploads/2021/04/Logos.png" alt="Logo" style="width: 150px; margin-bottom: 20px;" />
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Services</button>
+        <div class="dropdown-content">
+          <a routerLink="/manage-teachers" class="menu-link">Manage Teachers</a>
+          <a routerLink="/manage-classes" class="menu-link">Manage Classes</a>
+          <a routerLink="/dashboard" class="menu-link">DashBoard</a>
+          <button (click)="Logout()">LogOut</button>
+        </div>
+      </div>
+    </ul>
+  </nav>
+</header>
+</div>
+
+<router-outlet></router-outlet>
+
+<footer class="footer">
+  <p>&copy; 2024/25 IPCA</p>
+</footer>

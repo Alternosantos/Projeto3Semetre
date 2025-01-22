@@ -1,0 +1,19 @@
+<body>
+<header class="dashboard-header">
+  <h1>Gerenciar Classes</h1>
+  <p>Welcome to the admin panel for managing class.</p>
+</header>
+<main class="dashboard-container">
+  <section class="classes-list">
+    <h2>Current Classes</h2>
+    <div *ngIf="classes.length === 0">
+      <p>No classes found. Please add new classes.</p>
+    </div>
+    <div *ngFor="let classes of classes" class="classes-card">
+      <h3>{{ classes.Disciplina }}</h3>
+      <p>Subject: {{ classes.IdProfessor }}</p>
+      <button class="btn danger-btn" >Editar</button>
+    </div>
+  </section>
+</main>
+</body>

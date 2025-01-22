@@ -1,0 +1,49 @@
+<body>
+  <!-- Home Page Introduction -->
+  <div *ngIf="showInt" class="home-container">
+    <header>
+      <img src="https://ctesp.ipca.pt/wp-content/uploads/2021/04/Logos.png" alt="Logo" style="width: 150px; margin-bottom: 20px;" />
+      <h1>Welcome to Teaching Service Management</h1>
+      <p>Streamline your teaching services effortlessly.</p>
+
+    </header>
+    <!-- Link to show the login form -->
+    <footer>
+      <p>
+        <a href="javascript:void(0)" (click)="showLoginForm();hideIntro()">Let's Get Started</a>
+      </p>
+    </footer>
+  </div>
+
+  <!-- Login Form -->
+  <div *ngIf="showLogin" class="login-container">
+
+    <!-- Email Field -->
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        [(ngModel)]="Email"
+        type="email"
+        id="email"
+        placeholder="Enter your email"
+      />
+    </div>
+
+    <!-- Password Field -->
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input
+        [(ngModel)]="Password"
+        type="password"
+        id="password"
+        placeholder="Enter your password"
+      />
+    </div>
+
+    <!-- Submit Button -->
+    <button class="btn" (click)="Login()">Login</button>
+
+    <a routerLink="/candidatura-espontanea" class="menu-link">Nao tem conta? Canditate-se</a>
+
+  </div>
+</body>

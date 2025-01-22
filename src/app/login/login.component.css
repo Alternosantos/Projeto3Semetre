@@ -1,0 +1,359 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif; /* Fonte moderna */
+  height: 100%;
+  margin-right: -8px; /* Ajusta a margem direita */
+  margin-left: -10px;
+  margin-top: -1px;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom right, #fefefe, #00b1a9); /* Gradiente atraente */
+  color: #e80d0d;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.logo-container {
+  background-color: white;
+  padding: 10px; /* Optional padding for spacing around the image */
+  display: inline-block; /* Ensures the background applies only to the image */
+}
+
+/* Home Container */
+.home-container {
+  max-width: 450px;
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(255, 255, 255); /* Fundo branco translúcido */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  border-radius: 12px;
+  color: #333;
+  animation: fadeIn 1s ease-in-out; /* Animação de entrada */
+  position: relative;
+  top: -90px; /* Ajuste para cima */
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #00b1a9; /* Cor verde escuro */
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Footer Link */
+footer p {
+  margin-top: 20px;
+}
+
+footer a {
+  color: #00b1a9;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #00b1a9;
+  text-decoration: underline;
+}
+
+/* Login Container */
+.login-container {
+  max-width: 500px;
+  padding: 20px;
+  margin: 20px auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  color: #333;
+  margin-bottom: 200px;
+}
+
+h2 {
+  text-align: center;
+  color: #00b1a9;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input.is-invalid {
+  border-color: #e74c3c;
+}
+
+.invalid-feedback {
+  color: #e74c3c;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+.error-message {
+  color: #e74c3c;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Submit Button */
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #00b1a9;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #00b1a9;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .home-container {
+    padding: 20px;
+  }
+
+  .login-container{
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+}
+
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif; /* Fonte moderna */
+  height: 100%;
+  margin-right: -8px; /* Ajusta a margem direita */
+  margin-left: -10px;
+  margin-top: -1px;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom right, #fefefe, #00b1a9); /* Gradiente atraente */
+  color: #e80d0d;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.logo-container {
+  background-color: white;
+  padding: 10px; /* Optional padding for spacing around the image */
+  display: inline-block; /* Ensures the background applies only to the image */
+}
+
+/* Home Container */
+.home-container {
+  max-width: 450px;
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(255, 255, 255); /* Fundo branco translúcido */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  border-radius: 12px;
+  color: #333;
+  animation: fadeIn 1s ease-in-out; /* Animação de entrada */
+  position: relative;
+  top: -90px; /* Ajuste para cima */
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #00b1a9; /* Cor verde escuro */
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Footer Link */
+footer p {
+  margin-top: 20px;
+}
+
+footer a {
+  color: #00b1a9;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #00b1a9;
+  text-decoration: underline;
+}
+
+/* Login Container */
+.login-container {
+  max-width: 500px;
+  padding: 20px;
+  margin: 20px auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  color: #333;
+  margin-bottom: 200px;
+}
+
+h2 {
+  text-align: center;
+  color: #00b1a9;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input.is-invalid {
+  border-color: #e74c3c;
+}
+
+.invalid-feedback {
+  color: #e74c3c;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+.error-message {
+  color: #e74c3c;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Submit Button */
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #00b1a9;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #00b1a9;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .home-container {
+    padding: 20px;
+  }
+
+  .login-container{
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+}
+
+.menu-link {
+  display: block; /* Ensures the element behaves like a block for alignment */
+  text-align: center; /* Centers text within the block */
+  margin: 20px auto; /* Adds vertical spacing and centers the element horizontally */
+  font-size: 16px; /* Adjust font size if necessary */
+  text-decoration: none; /* Removes underline */
+  color: #007bff; /* Link color */
+}
+
+.menu-link:hover {
+  text-decoration: underline; /* Optional: adds an underline on hover */
+  color: #0056b3; /* Optional: changes the color on hover */
+}

@@ -1,0 +1,35 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.candidaturas-list {
+  display: grid;
+  gap: 20px;
+}
+
+.candidatura-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.candidatura-card h3 {
+  margin-top: 0;
+}
+
+.candidatura-card p {
+  margin: 5px 0;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+}

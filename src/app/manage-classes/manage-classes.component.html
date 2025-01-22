@@ -1,0 +1,45 @@
+<body>
+<header class="dashboard-header">
+  <h1>Gerenciar Classes</h1>
+  <p>Welcome to the admin panel for managing class.</p>
+</header>
+<main class="dashboard-container">
+  <section class="actions">
+    <h2>Manage Classes</h2>
+    <div class="action-buttons">
+      <button routerLink="/add-class" class="btn add-btn">Adiciona Class</button>
+      <button routerLink="/edit-class" class="btn edit-btn">Editar Class</button>
+    </div>
+  </section>
+
+  <section *ngIf="!isEditing" class="classes-list">
+    <h2>Current Classes</h2>
+    <div *ngIf="classes.length === 0">
+      <p>No classes found. Please add new classes.</p>
+    </div>
+    <div *ngFor="let classItem of classes" class="classes-card">
+      <h3>{{ classItem.Disciplina }}</h3>
+      <p>Professor ID: {{ classItem.IdProfessor }}</p>
+      <button class="btn edit-btn" (click)="onEditClass(classItem)">Editar</button>
+    </div>
+  </section>
+
+  <section *ngIf="isEditing" class="edit-class-section">
+    <h2>Edit Class: {{ selectedClass?.Disciplina }}</h2>
+    <p>Select a professor for this class:</p>
+    <ul>
+      <li *ngFor="let teacher of teachers">
+        {{ teacher.PrimeiroNome }} ({{ teacher.Subject }})
+        <button class="btn select-btn" (click)="onSelectTeacher(teacher)">Select</button>
+      </li>
+    </ul>
+
+    <div *ngIf="selectedTeacher" class="selected-teacher">
+      <p>Selected Teacher: {{ selectedTeacher.PrimeiroNome }}</p>
+      <button class="btn save-btn" (click)="saveTeacherAssignment()">Save Assignment</button>
+    </div>
+
+    <button class="btn cancel-btn" (click)="onCancelEdit()">Cancel</button>
+  </section>
+</main>
+</body>

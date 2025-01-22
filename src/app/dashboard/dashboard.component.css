@@ -1,0 +1,74 @@
+/* Estilo para o menu do dashboard */
+.dashboard-menu {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+nav h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Contêiner para os cartões */
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 160px;
+  margin-bottom: 50px;
+  flex-wrap: wrap; /* Permite que os cartões se alinhem verticalmente em telas menores */
+}
+
+/* Estilo para o cartão */
+.card {
+  background-color: #ffffff; /* Cor de fundo */
+  padding: 20px;
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  width: 250px;
+  text-align: center;
+  margin-bottom: 30px; /* Espaçamento entre os cartões */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Transições suaves */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Eleva o cartão quando o mouse passa por cima */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Aumenta a sombra */
+  background-color: #f0f0f0; /* Altera a cor de fundo no hover */
+}
+
+.card h2 {
+  font-size: 20px;
+  color: #333333; /* Cor do título */
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #777777; /* Cor do texto */
+  margin-bottom: 20px;
+}
+
+.card a {
+  color: #003267; /* Cor do link */
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.card a:hover {
+  color: #0056b3; /* Cor do link no hover */
+  text-decoration: underline; /* Sublinha o texto no hover */
+}
+
+
+/* Estilo responsivo para telas pequenas (móvel/tablet) */
+@media (max-width: 768px) {
+  .cards-container {
+    justify-content: center; /* Centraliza os cartões quando estão empilhados */
+  }
+
+  .card {
+    width: 90%; /* Ajusta os cartões para ocupar mais largura na tela pequena */
+  }
+
+}

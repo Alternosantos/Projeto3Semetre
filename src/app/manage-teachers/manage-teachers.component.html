@@ -1,0 +1,26 @@
+<body>
+<header class="dashboard-header">
+  <h1>Gerenciar Professores</h1>
+  <p>Welcome to the admin panel for managing teachers.</p>
+</header>
+<main class="dashboard-container">
+  <section class="actions">
+    <h2>Manage Teachers</h2>
+    <div class="action-buttons">
+      <button class="btn add-btn" (click)="navigateToAddTeacher()">Add Teacher</button>
+      <button class="btn remove-btn" >Remove Selected</button>
+    </div>
+  </section>
+  <section class="teacher-list">
+    <h2>Current Teachers</h2>
+    <div *ngIf="teachers.length === 0">
+      <p>No teachers found. Please add new teachers.</p>
+    </div>
+    <div *ngFor="let teacher of teachers" class="teacher-card">
+      <h3>{{ teacher.PrimeiroNome }}</h3>
+      <p>Subject: {{ teacher.Subject }}</p>
+      <button class="btn danger-btn" >Editar</button>
+    </div>
+  </section>
+</main>
+</body>

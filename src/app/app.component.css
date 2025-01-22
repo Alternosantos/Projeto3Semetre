@@ -1,0 +1,171 @@
+.logo {
+  width: 100px;
+  height: 40px;
+  object-fit: contain;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos do cabeçalho */
+header {
+  background: linear-gradient(to bottom right, #fefefe, #00b1a9);
+  margin-top: -10px; /* Ajusta a margem superior */
+  padding: 20px; /* Adiciona espaçamento interno */
+  margin-right: -8px; /* Ajusta a margem direita */
+  margin-left: -10px; /* Ajusta a margem esquerda */
+  width: auto; /* Largura automática */
+
+}
+
+/* Estilos de navegação */
+nav {
+  padding: 10px 20px; /* Adiciona espaçamento interno */
+  border-radius: 5px; /* Cantos arredondados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
+  background: linear-gradient(to bottom right, #fefefe, #00b1a9);
+}
+
+/* Estilos da lista de navegação */
+nav ul {
+  list-style: none; /* Remove os pontos da lista */
+  margin: 0; /* Remove a margem padrão */
+  padding: 0; /* Remove o preenchimento padrão */
+  display: flex; /* Usamos Flexbox para dispor os itens na horizontal */
+  justify-content: space-between; /* Distribui os itens com espaço entre eles (um à esquerda, outro à direita) */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+}
+
+/* Estilos para o logout */
+nav a, button {
+  text-decoration: none; /* Remove o sublinhado dos links */
+  color: #00b1a9; /* Cor do texto em branco */
+  font-weight: bold; /* Deixa o texto em negrito */
+  padding: 10px 15px; /* Adiciona espaçamento para tornar os links e botões clicáveis */
+  border-radius: 5px; /* Canto arredondado para os links e botões */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transição suave para mudança de cor e escala */
+}
+
+/* Estilos para o efeito de hover nos links de navegação */
+nav a:hover, button:hover {
+  background-color: #00b1a9; /* Cor de fundo mais escura no hover */
+  transform: scale(1.1); /* Aumenta ligeiramente o tamanho no hover */
+}
+
+/* Estilos para o efeito de clique nos links e botões */
+nav a:active, button:active {
+  background-color: #00b1a9; /* Cor de fundo ainda mais escura ao clicar */
+  transform: scale(1.05); /* Diminui ligeiramente o tamanho ao clicar */
+}
+
+/* Estilos específicos para o botão LogOut */
+.logout-button {
+  background-color: #00b1a9; /* Cor de fundo verde para o botão */
+  padding: 10px 20px; /* Adiciona espaçamento interno */
+  border-radius: 10px; /* Canto arredondado para o botão */
+  box-shadow: 0 4px 6px rgba(100, 6, 6, 0.1); /* Sombra suave para profundidade */
+}
+
+/* Estilos do rodapé */
+.footer {
+  background-color: #00b1a9; /* Cor de fundo verde para o rodapé */
+  color: white; /* Cor do texto em branco */
+  padding: 10px; /* Adiciona espaçamento interno */
+  text-align: center; /* Alinha o texto no centro */
+  position: fixed; /* Fixar o rodapé na parte inferior */
+  bottom: 0; /* Posiciona o rodapé na parte inferior da tela */
+  width: 100%; /* Largura total */
+  margin-left: -8px; /* Ajusta a margem esquerda */
+}
+/* Footer */
+
+.footer p {
+  font-family: 'Poppins', sans-serif; /* Aplicando a mesma fonte Poppins */
+  font-size: 14px; /* Ajustando o tamanho da fonte (você pode aumentar ou diminuir conforme necessário) */
+  color: white; /* Cor do texto */
+  margin: 0; /* Removendo margens extras */
+  padding: 10px 0; /* Adicionando um pouco de padding para espaçamento */
+  text-align: center; /* Centralizando o texto */
+}
+
+/* Parte teacher section */
+
+/* Estilizando o link "Teachers Section" */
+nav a {
+  font-family: 'Poppins', sans-serif; /* Definindo a fonte Poppins */
+  font-size: 20px; /* Aumentando o tamanho da fonte */
+  font-weight: 600; /* Definindo o peso da fonte para um pouco mais forte */
+  color: white; /* Definindo a cor do texto para branco */
+  text-decoration: none; /* Remover sublinhado do link */
+  padding: 10px 20px; /* Adicionando um pouco de espaço interno */
+  border-radius: 5px; /* Arredondando os cantos do link */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Efeito suave de transição */
+}
+
+nav a:hover {
+  background-color: #00b1a9; /* Cor de fundo quando passar o mouse */
+  transform: scale(1.1); /* Aumenta o tamanho do link um pouco ao passar o mouse */
+}
+
+.dropdown {
+  position: relative;
+  justify-content: flex-start !important; /* Override Bootstrap's global nav alignment */
+  display: inline-block; /* Prevent flexbox layout issues */
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 16px;
+  display: inline-block;
+  width: auto;
+  float: none !important;
+  margin-left: 0 !important;
+}
+
+.dropdown .dropbtn:hover {
+  background-color: #575757;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  min-width: 160px;
+  right: auto;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding: 10px 15px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.page-container {
+  display: flex;
+  flex-direction: column;
+}
+
+
